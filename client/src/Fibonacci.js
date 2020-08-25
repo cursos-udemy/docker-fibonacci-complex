@@ -25,7 +25,8 @@ class Fibonacci extends Component {
     }
 
     renderSeenIndexes() {
-        return this.state.seenIndexes.map(({ number }) => number).join(', ');
+        const seenIndexes = this.state.seenIndexes || [];
+        return seenIndexes.map(({ number }) => number).join(', ');
     }
 
     renderValues() {
@@ -56,7 +57,7 @@ class Fibonacci extends Component {
 
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Fibonacci App</h5>
+                        <h5 class="card-title">Fibonacci App. Version 2</h5>
                         <form onSubmit={this.handleSubmit}>
                             <label>Enter your index</label>
                             <input type="text" value={this.state.index} onChange={event => this.setState({ index: event.target.value })} />
